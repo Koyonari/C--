@@ -19,6 +19,7 @@ This repository is dedicated to learning the C++ language via project-based lear
 - Code Runner
 
 ## What I have learnt thus far!
+#### My Notes: `https://fluorescent-frame-930.notion.site/C-175c16e1f75d4171aaf33ff2a933d18f?pvs=25`
 
 ### Prerequisites
 `C#`
@@ -118,11 +119,11 @@ int main() {
     std::cout << "Hello " << name << "!\n";
     
     // const
-		const double pi = 3.14;
-		pi = 3; // will return an error
-		double radius = 10;
-		double cir = 2 * pi * radius;
-		std:cout << cir << "cm";
+    const double pi = 3.14;
+    pi = 3; // will return an error
+    double radius = 10;
+    double cir = 2 * pi * radius;
+    std:cout << cir << "cm";
 	        
     return 0;
 }

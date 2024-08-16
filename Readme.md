@@ -775,3 +775,79 @@ int main() {
 21229
 6*/
 ```
+
+### Functions & Return - Same as C#
+```cpp
+Function
+#include <iostream>
+
+// Declare the function to be used in the main function
+void print();
+void greet(std::string name);
+
+int main() {
+    print();
+    greet("John");
+
+    return 0;
+}
+
+// Function without argument
+void print() {
+    std::cout << "Hello, World!\n";
+}
+
+// Function with argument
+void greet(std::string name) {
+    std::cout << "Hello, " << name << "!\n";
+}
+/*Output:
+Hello, World!
+Hello, John!*/
+
+Return
+#include <iostream>
+
+// Declare the function to be used in the main function
+double square(double x);
+
+int main() {
+    double value;
+    value = square(1.5);
+    std::cout << "Squared value: " << value << "!\n";
+
+    return 0;
+}
+
+double square(double x) {
+    return x * x;
+}
+/*Output:
+Squared value: 2.25!*/
+```
+
+### Overloaded Functions - Same function names with different arguments
+```cpp
+#include <iostream>
+
+void bakePizza();
+void bakePizza(std::string topping);
+
+int main() {
+    bakePizza();
+    bakePizza("pepperoni");
+
+    return 0;
+}
+
+void bakePizza() {
+    std::cout << "Here is your pizza!\n";
+}
+
+void bakePizza(std::string topping) {
+    std::cout << "Here is your " << topping << " pizza!\n";
+}
+/*Output:
+Here is your pizza!
+Here is your pepperoni pizza!*/
+```

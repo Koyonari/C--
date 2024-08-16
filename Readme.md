@@ -851,3 +851,79 @@ void bakePizza(std::string topping) {
 Here is your pizza!
 Here is your pepperoni pizza!*/
 ```
+
+### Memory Management
+```cpp
+Memory Management
+
+// Reset error flags
+std::cin.clear()
+
+// Clear input buffer
+fflush(stdin)
+```
+
+### Array - Similar to C#
+```cpp
+#include <iostream>
+
+int main() {
+    using std::cout;
+
+    std::string car[] = {"BMW", "Audi", "Mercedes", "Toyota", "Honda"};
+
+    for (int i = 0; i < 5; i++) {
+        cout << car[i] << '\n';
+    }
+
+    // Reassigning the value of index
+    cout << "Value of index 0 before reassigning: " << car[0] << '\n';
+    car[0] = "Ford";
+    cout << "Value of index 0 after reassigning: " << car[0] << '\n';
+
+    // Setting array size
+    int arr[5] = {1, 2, 3, 4, 5};
+    cout << "Size of array: " << sizeof(arr) / sizeof(arr[0]) << '\n';
+
+    return 0;
+}
+/*Output:
+BMW
+Audi
+Mercedes
+Toyota
+Honda
+Value of index 0 before reassigning: BMW
+Value of index 0 after reassigning: Ford
+Size of array: 5*/
+```
+
+### Sizeof() & Size() - size in byts of a variable, data type, class, object etc
+```cpp
+// sizeof(variable) - returns the size of the variable in bytes
+// sizeof(array) / sizeof(array[0]) - returns the number of elements in the array
+// string.size() - returns the number of characters in the string
+#include <iostream>
+
+int main() {
+    using std::cout;
+    
+    // Get number of bytes
+    double gpa = 4.0;
+    cout << "Size of double: " << sizeof(gpa) << " bytes\n";
+	
+    // Get number of elements in array
+    int arr[5] = {1, 2, 3, 4, 5};
+    cout << "Size of array: " << sizeof(arr) / sizeof(arr[0]) << '\n';
+
+    // Get number of elements in string
+    std::string name = "Johnny Bravo";
+    cout << "Size of string: " << name.size() << '\n';
+  
+    return 0;
+}
+/*Output:
+Size of double: 8 bytes
+Size of array: 5
+Size of string: 12*/
+```

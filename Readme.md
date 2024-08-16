@@ -927,3 +927,22 @@ Size of double: 8 bytes
 Size of array: 5
 Size of string: 12*/
 ```
+
+### For each
+```cpp
+// for (datatype element: variable)
+#include <iostream>
+
+int main() {
+    using std::cout;
+    using std::string;
+
+    string car[] = {"BMW", "Audi", "Mercedes", "Toyota", "Honda"};
+
+    for (string x : car) {
+        cout << x << "\n";
+    }
+
+    return 0;
+}
+```

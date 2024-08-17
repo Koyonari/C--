@@ -946,3 +946,163 @@ int main() {
     return 0;
 }
 ```
+
+### Fill function - fills a range of elements with a specific value
+```cpp
+// fill(begin, end, value)
+#include <iostream>
+
+int main() {
+    using std::cout;
+    using std::string;
+    using std::cin;
+
+    const int size = 10; // needs to be a constant to work with fill
+    string food[size];
+    fill(food, food + size/2, "Pizza"); // Fill first 5 with Pizza
+    fill(food + size/2, food + size, "Fries");  // Fill second 5 with Fries
+
+    cout << "Food array: \n";
+    for (int i = 0; i < 10; i++) {
+        cout << food[i] << "\n";
+    }
+
+    return 0;
+}
+/*Output:
+Food array: 
+Pizza
+Pizza
+Pizza
+Pizza
+Pizza
+Fries
+Fries
+Fries
+Fries
+Fries*/
+```
+
+### 2D Arrays
+```cpp
+// int arr[2][3] - 2d array -> 2 rows 3 columns, setting column is required
+#include <iostream>
+
+int main() {
+    using std::cout;
+    using std::cin;
+    using std::string;
+
+    // Creating 2d array
+    string cars[2][3] = {{"Mustang", "Corvette", "Porsche"},
+                        {"BMW", "Toyota", "Honda"}};
+
+    // Displaying 2d array
+    for (int i = 0; i < 2; i++) {
+        if (i == 1) {
+            cout << "\n";
+        }
+        for (int j = 0; j < 3; j++) {
+            cout << cars[i][j] << ' ';
+        }
+    }
+
+    // Getting the row and column size of 2d array
+    int rows = sizeof(cars) / sizeof(cars[0]);
+    int cols = sizeof(cars[0]) / sizeof(cars[0][0]);
+    cout << "\nRows: " << rows << "\nColumns: " << cols;
+
+    return 0;
+}
+/*Output:
+Mustang Corvette Porsche 
+BMW Toyota Honda
+Rows: 2
+Columns: 3*/
+```
+
+### Memory Addresses
+```cpp
+// Memory Address - location in memory where data is stored, accessible with &
+#include <iostream>
+
+int main() {
+    using std::cout;
+    using std::cin;
+    using std::string;
+
+    string name = "John";
+    int age = 21;
+    bool student = true;
+    double gpa = 3.5;
+    string address = "123 Main St";
+
+    cout << "String Name Memory Address: " << &name << "\n"; // 0x61a2dff8b0, 419344414896
+    cout << "Int Age Memory Address: " << &age << "\n"; // 0x61a2dff8ac, 419344414892
+    cout << "Bool Student Memory Address: " << &student << "\n"; // 0x61a2dff8ab, 419344414891
+    cout << "Double GPA Memory Address: " << &gpa << "\n"; // 0x61a2dff8a0, 419344414880
+    cout << "String Address Memory Address: " << &address << "\n"; // 0x61a2dff880, 419344414848
+    
+    cout << "\nSize of int: " << sizeof(int) << " bytes\n";
+    cout << "Size of bool: " << sizeof(bool) << " bytes\n";
+    cout << "Size of double: " << sizeof(double) << " bytes\n";
+    cout << "Size of string: " << sizeof(std::string) << " bytes\n";
+
+    // Difference in memory address between name and age converted to decimal = 4.
+    // Difference in memory address between age and student converted to decimal = 1.
+
+    // Between name and age = 4 as age is a int and takes 4 bytes.
+    // Between age and student = 1 as student is a bool and takes 1 byte.
+
+    return 0;
+}
+/*Sample Output:
+String Name Memory Address: 0x68fb7ffb00
+Int Age Memory Address: 0x68fb7ffafc
+Bool Student Memory Address: 0x68fb7ffafb
+Double GPA Memory Address: 0x68fb7ffaf0
+String Address Memory Address: 0x68fb7ffad0
+
+Size of int: 4 bytes
+Size of bool: 1 bytes
+Size of double: 8 bytes
+Size of string: 32 bytes*/
+```
+
+## Algorithms
+
+### Bubble Sort - Sorts by comparing adjacent elements e.g. if a is greater than b, swap them
+```cpp
+#include <iostream>
+
+void bubbleSort(int array[], int size);
+
+int main() {
+    using std::cout;
+    using std::string;
+    using std::cin;
+
+    int array[] = {2, 1, 3, 4, 5, 6, 7, 8, 9, 10};
+    int size = sizeof(array) / sizeof(array[0]);
+    bubbleSort(array, size);
+
+    for (int element: array) {
+        cout << element << " ";
+    }
+
+    return 0;
+}
+
+void bubbleSort(int array[], int size) {
+    int temp;
+    for (int i = 0; i < size - 1; i++) {
+        for (int j = 0; j < size - i - 1; j++) {
+            if (array[j] < array[j + 1]) { // If statement to check if first element is less than second statement
+                temp = array[j]; // temp -> 1st, Assign the first element to temporary variable
+                array[j] = array[j + 1]; // 1st -> 2nd, Assign the first element to the second element
+                array[j + 1] = temp; // 2nd -> temp, Assign the second element to the temporary variable which is the first element
+            }
+        }
+    }
+}
+```

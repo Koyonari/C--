@@ -1,20 +1,23 @@
-// Const Pass by Reference - Read only
+// nullptr = keyword representing a null pointer
+// when using pointers, check if the pointer is null before dereferencing it
+// deferencing null pointers can cause runtime errors
 #include <iostream>
 using std::cout;
 using std::cin;
 using std::string;
 
-void print(const string &name, const int &age);
-
 int main() {
 
-    print("John", 21);
+    int *pointer = nullptr;
+    int x = 123;
+    pointer = &x; // pointer now holds the address of x
+
+    if (pointer != nullptr) {
+        cout << "The value of x is: " << *pointer << "\n";
+    }
+    else {
+        cout << "Address is not assigned, you tried deferencing a null pointer\n";
+    }
 
     return 0;
-}
-
-void print(const string &name, const int &age) {
-    // name = "Jane"; // Error: const
-    // int = 2; // Error: const
-    cout << name << " is " << age << " years old.\n";
 }

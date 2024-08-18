@@ -1161,8 +1161,70 @@ void print(const string &name, const int &age) {
 John is 21 years old.*/
 ```
 
-## Algorithms
+### Pointers - variable that stores a memory address of another variable
+```cpp
+// & - address of operator
+// * - dereference operator
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::string;
 
+int main() {
+
+    string name = "John";
+    string *pname = &name;
+    cout << "Name: " << *pname << "\n";
+
+    // Arrays
+    int arr[5] = {1, 2, 3, 4, 5};
+    int *parr = arr;
+    // int *parr = &arr; would give an error as arrays are already memory addresses
+    cout << "First element: " << *parr << "\n";
+    cout << "Second element: " << *(parr + 1) << "\n";
+
+    return 0;
+}
+/*Output:
+Name: John
+First element: 1
+Second element: 2*/
+```
+
+### Null Pointers
+```cpp
+// nullptr = keyword representing a null pointer
+// when using pointers, check if the pointer is null before dereferencing it
+// deferencing null pointers can cause runtime errors
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::string;
+
+int main() {
+
+    int *pointer = nullptr;
+    int x = 123;
+    pointer = &x; // pointer now holds the address of x, making it not a null pointer
+
+    if (pointer != nullptr) {
+        cout << "The value of x is: " << *pointer << "\n";
+    }
+    else {
+        cout << "Address is not assigned, you tried deferencing a null pointer\n";
+    }
+
+    return 0;
+}
+/*Output:
+The value of x is: 123*/
+```
+
+
+
+___
+
+## Algorithms
 ### Bubble Sort - Sorts by comparing adjacent elements e.g. if a is greater than b, swap them
 ```cpp
 #include <iostream>

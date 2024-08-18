@@ -6,9 +6,13 @@ This repository is dedicated to learning the C++ language via project-based lear
 ## Programs
 | Folder Name | Brief Description |
 | ----------- | ----------- |
+| bank_prog | Banking Program |
+| bubble_sort | Bubble Sort Algorithm |
 | calc_prog | Calculator Program |
+| credit_card_vali | Luhn Algorithm |
 | hype_calc | Hypotenuse Calculator |
 | num_guess | Number Guessing Game |
+| quiz_game | Quiz Game |
 | ran_event | Random Event Generator |
 | rng | Random Number Generator |
 | temp_conv | Temperature Converter |
@@ -1021,9 +1025,9 @@ Rows: 2
 Columns: 3*/
 ```
 
-### Memory Addresses
+### Memory Addresses/Reference
 ```cpp
-// Memory Address - location in memory where data is stored, accessible with &
+// Memory Address/Reference - location in memory where data is stored, accessible with &
 #include <iostream>
 
 int main() {
@@ -1040,8 +1044,8 @@ int main() {
     cout << "String Name Memory Address: " << &name << "\n"; // 0x61a2dff8b0, 419344414896
     cout << "Int Age Memory Address: " << &age << "\n"; // 0x61a2dff8ac, 419344414892
     cout << "Bool Student Memory Address: " << &student << "\n"; // 0x61a2dff8ab, 419344414891
-    cout << "Double GPA Memory Address: " << &gpa << "\n"; // 0x61a2dff8a0, 419344414880
-    cout << "String Address Memory Address: " << &address << "\n"; // 0x61a2dff880, 419344414848
+    cout << "Double GPA Memory Address: " << &gpa << "\n"; // 0x61a2dff8a0, 419344414883
+    cout << "String Address Memory Address: " << &address << "\n"; // 0x61a2dff880, 419344414851
     
     cout << "\nSize of int: " << sizeof(int) << " bytes\n";
     cout << "Size of bool: " << sizeof(bool) << " bytes\n";
@@ -1067,6 +1071,94 @@ Size of int: 4 bytes
 Size of bool: 1 bytes
 Size of double: 8 bytes
 Size of string: 32 bytes*/
+```
+
+### Pass by Value / Pass by Reference
+```cpp
+// Pass by Value - uses value (values all have different memory addresses)
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::string;
+
+void swapValue(string x, string y);
+
+int main() {
+
+
+    string x = "Kool-Aid";
+    string y = "Jammers";
+
+    swapValue(x, y);
+    
+    cout << "X: " << x << "\n";
+    cout << "Y: " << y << "\n";
+
+    return 0;
+}
+
+void swapValue(string x, string y) {
+    string temp = x;
+    x = y;
+    y = temp;
+}
+/*Output:
+X: Kool-Aid
+Y: Jammers*/
+
+// Pass by Reference - uses memory address (use as often as possible unless there is a reason to pass by value)
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::string;
+
+void swapReference(string &x, string &y);
+
+int main() {
+
+
+    string x = "Kool-Aid";
+    string y = "Jammers";
+
+    swapReference(x, y);
+    
+    cout << "X: " << x << "\n";
+    cout << "Y: " << y << "\n";
+
+    return 0;
+}
+
+void swapReference(string &x, string &y) {
+    string temp = x;
+    x = y;
+    y = temp;
+}
+/*Output:
+X: Jammers
+Y: Kool-Aid*/
+
+// Const Pass by Reference - Read only
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::string;
+
+void print(const string &name, const int &age);
+
+int main() {
+
+    print("John", 21);
+
+    return 0;
+}
+
+void print(const string &name, const int &age) {
+    // name = "Jane"; // Error: const
+    // int = 2; // Error: const
+    cout << name << " is " << age << " years old.\n";
+}
+/*Output:
+John is 21 years old.*/
 ```
 
 ## Algorithms
@@ -1105,4 +1197,96 @@ void bubbleSort(int array[], int size) {
         }
     }
 }
+```
+
+### Luhn Algorithm - Used to validate credit card number
+>#### <u>How it works</u>
+>1. Double every second digit from right to left.
+>2. If doubled number is 2 digits, split them.
+>3. Add all single digits from step 2.
+>4. Add all odd number digits from right to left.
+>5. Sum results from steps 3 & 4.
+>6. If step 5 is divisible by 10, credit card number is valid.
+
+```cpp
+//Luhn Algorithm
+#include <iostream>
+
+using std::string;
+using std:: cout;
+using std:: cin;
+
+int getDigit(const int number);
+int sumOddDigits(const string cardNum);
+int sumEvenDigits(const string cardNum);
+
+int main() {
+    int result = 0;
+    string cardNum;
+
+    cout << "Enter a credit card number: ";
+    cin >> cardNum;
+
+    int sumOdd = sumOddDigits(cardNum);
+    int sumEven = sumEvenDigits(cardNum);
+    result = sumOdd + sumEven;
+
+    std::cout << "Sum of odd numbers: " << sumOdd << "\n";
+    std::cout << "Sum of even numbers: " << sumEven << "\n";
+    std::cout << "Total: " << result << "\n";
+
+    if (result % 10 == 0) {
+        std::cout << "Valid Credit Card Number!\n";
+    } else {
+        std::cout << "Invalid Credit Card Number :(\n";
+    }
+}
+
+// Get the last digit of the number only if the number is greater than 10
+int getDigit(const int number) {
+    return number % 10 + (number / 10 % 10);
+    // Example: number = 18
+    // 18 % 10 = 8
+    // Since int division, 18 / 10 = 1
+    // 1 % 10 = 1
+    // 8 + 1 = 9
+    // Return 9
+}
+
+int sumOddDigits(const string cardNum) {
+    int sum = 0;
+    for (int i = cardNum.size() - 1; i >= 0; i -= 2) { // Since using index, -1 to start from the last value, -2 to start from second last value
+        sum+= (cardNum[i] - 48); 
+        // Subtract 48 or '0' to convert from ASCII
+        // 0 has a decimal value of 48
+        // 1 has a decimal value of 49
+        // 2 has a decimal value of 50 and so on....
+        // cardNum[i] returns the decimal value of the character
+        // cardNum[i] - 48 returns the actual number
+    }
+    return sum;
+}
+
+int sumEvenDigits(const string cardNum) {
+    int sum = 0;
+    for (int i = cardNum.size() - 2; i >= 0; i -= 2) { // Since using index, -1 to start from the last value, -2 to start from second last value
+        sum+=getDigit((cardNum[i] - 48) * 2);
+    }
+    return sum;
+}
+/*
+Positive Output:
+Enter a credit card number: 5396190365417138
+Sum of odd numbers: 36
+Sum of even numbers: 34
+Total: 70
+Valid Credit Card Number!
+
+Negative Output:
+Enter a credit card number:
+5396190365417139
+Sum of odd numbers: 37
+Sum of even numbers: 34
+Total: 71
+Invalid Credit Card Number :(*/
 ```

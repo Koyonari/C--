@@ -1252,8 +1252,171 @@ int main() {
 
     return 0;
 }
+/*Output:
+Enter number of grades: 5
+Enter grade #1: A
+Enter grade #2: B
+Enter grade #3: C
+Enter grade #4: D
+Enter grade #5: E
+Grade #1: A
+Grade #2: B
+Grade #3: C
+Grade #4: D
+Grade #5: E*/
 ```
 
+### Recursion - function invokes itself
+```cpp
+// Iterative vs Recursive
+// Advantage of recursive: Less code, cleaner, useful for sorting and searching algorithms
+// Disadvantage of recursive: use more memory, slower, harder to debug
+#include <iostream>
+
+using std::cout;
+using std::cin;
+using std::string;
+
+void walkIterative(int steps);
+void walkRecursive(int steps);
+int factorialIterative(int num);
+int factorialRecursive(int num);
+
+int main() {
+
+    // Iterative
+    cout << "Iterative\n";
+    walkIterative(10);
+    // Recursive
+    cout << "\nRecursive\n";
+    walkRecursive(10);
+    // Iterative Factorial
+    cout << "\nIterative Factorial: " <<
+    factorialIterative(5);
+    // Recursive Factorial
+    cout << "\nRecursive Factorial: " <<
+    factorialRecursive(5);
+
+    return 0;
+}
+
+// Iterative
+void walkIterative(int steps) {
+    for (int i = steps; i > 0; i--) {
+        cout << "Step " << i << "\n";
+    }
+}
+
+// Recursive
+void walkRecursive(int steps) {
+    if (steps > 0) {
+        cout << "Step " << steps << "\n";
+        walkRecursive(steps - 1);
+    }
+}
+
+// Iterative Factorial
+int factorialIterative(int num) {
+    int result = 1;
+    for (int i = 1; i <= num; i++) {
+        result *= i;
+    }
+    return result;
+}
+
+// Recursive Factorial
+int factorialRecursive(int num) {
+    if (num == 0) {
+        return 1;
+    } else {
+        return num * factorialRecursive(num - 1);
+    }
+}
+/*Output:
+Iterative
+Step 10
+Step 9
+Step 8
+Step 7
+Step 6
+Step 5
+Step 4
+Step 3
+Step 2
+Step 1
+
+Recursive
+Step 10
+Step 9
+Step 8
+Step 7
+Step 6
+Step 5
+Step 4
+Step 3
+Step 2
+Step 1
+
+Iterative Factorial: 120
+Recursive Factorial: 120*/
+```
+### Function Templates - Used to generate as many overloaded functions as needed with different data types
+```cpp
+// auto keyword can be used to automatically determine the data type of the variable
+#include <iostream>
+using std::cout;
+using std::cin;
+
+// Function Template
+template <typename T>
+// This only works with same data type
+T max(T x, T y) {
+    return (x > y) ? x : y;
+}
+// This works with different combinations of data types
+template <typename T, typename U>
+auto max(T x, U y) { 
+    /*auto is the return type,T can be used to return the T data type,
+    U can be used to return the U data type, 
+    auto can be used to return the data type automatically*/
+    return (x > y) ? x : y;
+}
+
+// Function overloading for different data types 
+int max(int x, int y) {
+    return (x > y) ? x : y;
+}
+char max(char x, char y) {
+    return (x > y) ? x : y;
+}
+double max(double x, double y) {
+    return (x > y) ? x : y;
+}
+
+int main() {
+    // Function overloading for different data types 
+    cout << "Normal Function Overloading\n";
+    cout << max(5, 10) << '\n';
+    cout << max(5.5, 10.5) << '\n';
+    cout << max('A', 'B') << '\n';
+
+    // Using Function Templates
+    cout << "\nFunction Templates\n";
+    cout << max(5, 10) << '\n';
+    cout << max(5, 10.5) << '\n';
+
+    return 0;
+}
+/*Output:
+Normal Function Overloading
+10
+10.5
+B
+
+Function Templates
+10
+10.5*/
+```
 
 ___
 

@@ -16,6 +16,7 @@ This repository is dedicated to learning the C++ language via project-based lear
 | ran_event | Random Event Generator |
 | rng | Random Number Generator |
 | temp_conv | Temperature Converter |
+| tictactoe | Tic-Tac-Toe Game |
 
 ## Technologies Used
 - Visual Studio Code

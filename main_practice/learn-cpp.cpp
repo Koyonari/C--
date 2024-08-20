@@ -1,26 +1,49 @@
+// Inheritance
 #include <iostream>
 using std::cout;
 using std::cin;
 using std::string;
 
-struct student {
-    string name;
-    int age;
-    double gpa;
-    bool enrolled;
+// Parent class
+class Animal {
+    public:
+        bool alive = true;
+
+        void speak() { 
+            cout << "Grrrr\n"; 
+        }
+
+        void eat() {
+            cout << "Nom nom nom\n";
+        }
+
+};
+
+// Child class
+class Dog: public Animal {
+    public:
+        string breed;
+
+        void bark() {
+            cout << "Woof Woof\n";
+        }
 };
 
 int main() {
-    student s1;
-    s1.name = "John";
-    s1.age = 21;
-    s1.gpa = 3.5;
-    s1.enrolled = true;
+    Dog dog;
+    Animal animal;
 
-    cout << "Name: " << s1.name << "\n";
-    cout << "Age: " << s1.age << "\n";
-    cout << "GPA: " << s1.gpa << "\n";
-    cout << "Enrolled: " << s1.enrolled << "\n";
+    cout << "Animal class\n";
+    cout << animal.alive << "\n";
+    animal.speak();
+    animal.eat();
+
+    // Dog class inherits from Animal class
+    cout << "\nDog class\n";
+    cout << dog.alive << "\n";
+    dog.bark();
+    dog.speak();
+    dog.eat();
 
     return 0;
 }

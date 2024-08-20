@@ -1,35 +1,41 @@
 # Join me on my journey to learn C++
 
 ## Purpose
+
 This repository is dedicated to learning the C++ language via project-based learning with my background of C#. This repository contains my practice programs I have made along my journey to learning C++. I aim to learn the ins-and-outs of C++, especially the fundamentals. 😁😆😺
 
 ## Programs
-| Folder Name | Brief Description |
-| ----------- | ----------- |
-| bank_prog | Banking Program |
-| bubble_sort | Bubble Sort Algorithm |
-| calc_prog | Calculator Program |
-| credit_card_vali | Luhn Algorithm |
-| hype_calc | Hypotenuse Calculator |
-| num_guess | Number Guessing Game |
-| quiz_game | Quiz Game |
-| ran_event | Random Event Generator |
-| rng | Random Number Generator |
-| temp_conv | Temperature Converter |
-| tictactoe | Tic-Tac-Toe Game |
+
+| Folder Name      | Brief Description       |
+| ---------------- | ----------------------- |
+| bank_prog        | Banking Program         |
+| bubble_sort      | Bubble Sort Algorithm   |
+| calc_prog        | Calculator Program      |
+| credit_card_vali | Luhn Algorithm          |
+| hype_calc        | Hypotenuse Calculator   |
+| num_guess        | Number Guessing Game    |
+| quiz_game        | Quiz Game               |
+| ran_event        | Random Event Generator  |
+| rng              | Random Number Generator |
+| temp_conv        | Temperature Converter   |
+| tictactoe        | Tic-Tac-Toe Game        |
 
 ## Technologies Used
+
 - Visual Studio Code
 - C/C++ Extension
 - Code Runner
 
 ## What I have learnt thus far!
+
 #### My Notes: `https://fluorescent-frame-930.notion.site/C-175c16e1f75d4171aaf33ff2a933d18f?pvs=25`
 
 ### Prerequisites
+
 `C#`
 
 ### Important Notes
+
 ```cpp
 // iostream - standard input-output stream
 // iostream declares objects that control reading from and writing to standard stream
@@ -43,6 +49,7 @@ int main() {
 ```
 
 ### Printing
+
 ```cpp
 int main() {
 	std::cout << "Hello, World!";
@@ -55,6 +62,7 @@ Hello, World!meow*/
 ```
 
 ### Next Line - endl & '\n'
+
 ```cpp
 // endl - endline forces a flush
 // '\n' - next line does not force buffer flush frequently, better performance wise
@@ -72,6 +80,7 @@ Hello, World!*/
 ```
 
 ### Declaration & Assignment - Same as C#
+
 ```cpp
 #include <iostream>
 
@@ -95,6 +104,7 @@ sum: 11*/
 ```
 
 ### Data Types - Similar to C# except std::string
+
 ```cpp
 #include <iostream>
 
@@ -122,14 +132,14 @@ int main() {
     // string
     std::string name = "john";
     std::cout << "Hello " << name << "!\n";
-    
+
     // const
     const double pi = 3.14;
     pi = 3; // will return an error
     double radius = 10;
     double cir = 2 * pi * radius;
     std:cout << cir << "cm";
-	        
+
     return 0;
 }
 
@@ -145,6 +155,7 @@ Hello john!
 ```
 
 ### User Input & Output - cout & cin
+
 ```cpp
 // cout << - Insertion operator
 // cin >> - Extraction operator
@@ -153,7 +164,7 @@ Example 1: std::cin to get input
 #include <iostream>
 
 int main() {
-    std::string name;    
+    std::string name;
     std::cout << "Enter your name: ";
     std::cin >> name;
 
@@ -170,7 +181,7 @@ Example 2: std::getline to include spaces
 #include <string>
 
 int main() {
-    std::string name;    
+    std::string name;
     std::cout << "Enter your name: ";
     std::getline(std::cin, name);
 
@@ -193,7 +204,7 @@ int main() {
 
     std::cout << "Enter your age: ";
     std::cin >> age;
-    
+
     std::cout << "Enter your name: ";
     std::getline(std::cin, name);
 
@@ -215,7 +226,7 @@ int main() {
 
     std::cout << "Enter your age: ";
     std::cin >> age;
-    
+
     std::cout << "Enter your name: ";
     std::getline(std::cin >> std::ws, name);
 
@@ -231,6 +242,7 @@ You are 5 years old.*/
 ```
 
 ### Namespaces
+
 ```cpp
 Example 1:
 #include <iostream>
@@ -238,7 +250,7 @@ Example 1:
 int main() {
     int x = 5;
     int x = 6; // Error: redeclaration of 'int x'
-    
+
     return 0;
 }
 /*Output:
@@ -317,6 +329,7 @@ int main() {
 ```
 
 ### Typedef & Type Aliases
+
 ```cpp
 // typedef - helps readability by assigning a data type to a typedef variable
 // typedef - naming convention ends with _t
@@ -342,6 +355,7 @@ You are 25 years old.*/
 ```
 
 ### Math Operators - Same as C#, has order of precedence
+
 ```cpp
 // Operators are similar to C#
 #include <iostream>
@@ -380,7 +394,7 @@ int main() {
 
     //CMath functions - Must #include <cmath>
     // Power: a^b
-    double power = pow(2, 3); 
+    double power = pow(2, 3);
     // Sqrt: Square root
     double squareRoot = sqrt(64);
     // Abs: Absolute value, removes negative sign
@@ -402,7 +416,7 @@ int main() {
     std::cout << "Round: " << rounded << '\n';
     std::cout << "Floor: " << floored << '\n';
     std::cout << "Ceil: " << ceiling << '\n';
-    
+
     return 0;
 }
 
@@ -420,6 +434,7 @@ Ceil: 5*/
 ```
 
 ### Type Conversion - Implicit & Explicit, Same as C#
+
 ```cpp
 //Implicit - Automatic
 //Explicit - Precede value with new data type
@@ -444,7 +459,7 @@ Example 2: Explicit
 
 int main() {
     double x = (int)6.9; // Assigning double to int
-    
+
     std::cout << x;
     std::cout << (char)100; // Assigning int to a char - converts using ASCII
 
@@ -455,6 +470,7 @@ int main() {
 ```
 
 ### If, else, else if statement - Same as C#
+
 ```cpp
 // Order matters
 #include <iostream>
@@ -478,6 +494,7 @@ int main() {
 ```
 
 ### Switch statements - Same as C#, more efficient and better readability than if else
+
 ```cpp
 #include <iostream>
 
@@ -533,6 +550,7 @@ int main() {
 ```
 
 ### Ternary Operators - Same as C#
+
 ```cpp
 // Alternative to if else, switch statements
 #include <iostream>
@@ -558,6 +576,7 @@ int main() {
 ```
 
 ### Logical Operators - Same as C#
+
 ```cpp
 // && - and
 // || - or
@@ -600,6 +619,7 @@ int main() {
 ```
 
 ### String Manipulation
+
 ```cpp
 // .empty() - checks if string is empty, returns boolean
 // .length() - returns the length of the string
@@ -668,6 +688,7 @@ hello @gmail.com
 ```
 
 ### While Loops - Same as C#
+
 ```cpp
 #include <iostream>
 #include <string>
@@ -679,7 +700,7 @@ int main() {
         std::cout << "Enter your name: ";
         std::getline(std::cin, name);
     }
-    
+
     std::cout << "Hello, " << name << "!" << std::endl;
 
     return 0;
@@ -687,6 +708,7 @@ int main() {
 ```
 
 ### Do While Loop - Same as C#
+
 ```cpp
 #include <iostream>
 
@@ -696,7 +718,7 @@ int main() {
         std::cout << "Enter a postive number: ";
         std::cin >> number;
     } while (number < 0);
-    
+
     std::cout << "The number is: " << number << "!\n";
 
     return 0;
@@ -704,11 +726,12 @@ int main() {
 ```
 
 ### For Loop - Same as C#
+
 ```cpp
 #include <iostream>
 
 int main() {
-    
+
     for (int i = 0; i < 3; i++) {
         std::cout << "Hello, World!\n";
     }
@@ -722,6 +745,7 @@ Hello, World!*/
 ```
 
 ### Break & Continue - Same as C#
+
 ```cpp
 // break - break out of loop
 // continue - skip to next iteration of loop
@@ -730,7 +754,7 @@ Hello, World!*/
 #include <iostream>
 
 int main() {
-    
+
     for (int i = 0; i < 3; i++) {
         if (i == 1) {
             break;
@@ -747,7 +771,7 @@ Hello, World!*/
 #include <iostream>
 
 int main() {
-    
+
     for (int i = 0; i < 3; i++) {
         if (i == 1) {
             continue;
@@ -763,6 +787,7 @@ Hello, World!*/
 ```
 
 ### Random Number Generator (RNG) - srand
+
 ```cpp
 int main() {
     // Pseudo-random number generator (Not totally random but close)
@@ -782,6 +807,7 @@ int main() {
 ```
 
 ### Functions & Return - Same as C#
+
 ```cpp
 Function
 #include <iostream>
@@ -832,6 +858,7 @@ Squared value: 2.25!*/
 ```
 
 ### Overloaded Functions - Same function names with different arguments
+
 ```cpp
 #include <iostream>
 
@@ -858,6 +885,7 @@ Here is your pepperoni pizza!*/
 ```
 
 ### Memory Management
+
 ```cpp
 Memory Management
 
@@ -869,6 +897,7 @@ fflush(stdin)
 ```
 
 ### Array - Similar to C#
+
 ```cpp
 #include <iostream>
 
@@ -904,6 +933,7 @@ Size of array: 5*/
 ```
 
 ### Sizeof() & Size() - size in byts of a variable, data type, class, object etc
+
 ```cpp
 // sizeof(variable) - returns the size of the variable in bytes
 // sizeof(array) / sizeof(array[0]) - returns the number of elements in the array
@@ -912,11 +942,11 @@ Size of array: 5*/
 
 int main() {
     using std::cout;
-    
+
     // Get number of bytes
     double gpa = 4.0;
     cout << "Size of double: " << sizeof(gpa) << " bytes\n";
-	
+
     // Get number of elements in array
     int arr[5] = {1, 2, 3, 4, 5};
     cout << "Size of array: " << sizeof(arr) / sizeof(arr[0]) << '\n';
@@ -924,7 +954,7 @@ int main() {
     // Get number of elements in string
     std::string name = "Johnny Bravo";
     cout << "Size of string: " << name.size() << '\n';
-  
+
     return 0;
 }
 /*Output:
@@ -934,6 +964,7 @@ Size of string: 12*/
 ```
 
 ### For each
+
 ```cpp
 // for (datatype element: variable)
 #include <iostream>
@@ -953,6 +984,7 @@ int main() {
 ```
 
 ### Fill function - fills a range of elements with a specific value
+
 ```cpp
 // fill(begin, end, value)
 #include <iostream>
@@ -975,7 +1007,7 @@ int main() {
     return 0;
 }
 /*Output:
-Food array: 
+Food array:
 Pizza
 Pizza
 Pizza
@@ -989,6 +1021,7 @@ Fries*/
 ```
 
 ### 2D Arrays
+
 ```cpp
 // int arr[2][3] - 2d array -> 2 rows 3 columns, setting column is required
 #include <iostream>
@@ -1020,13 +1053,14 @@ int main() {
     return 0;
 }
 /*Output:
-Mustang Corvette Porsche 
+Mustang Corvette Porsche
 BMW Toyota Honda
 Rows: 2
 Columns: 3*/
 ```
 
 ### Memory Addresses/Reference
+
 ```cpp
 // Memory Address/Reference - location in memory where data is stored, accessible with &
 #include <iostream>
@@ -1047,7 +1081,7 @@ int main() {
     cout << "Bool Student Memory Address: " << &student << "\n"; // 0x61a2dff8ab, 419344414891
     cout << "Double GPA Memory Address: " << &gpa << "\n"; // 0x61a2dff8a0, 419344414883
     cout << "String Address Memory Address: " << &address << "\n"; // 0x61a2dff880, 419344414851
-    
+
     cout << "\nSize of int: " << sizeof(int) << " bytes\n";
     cout << "Size of bool: " << sizeof(bool) << " bytes\n";
     cout << "Size of double: " << sizeof(double) << " bytes\n";
@@ -1075,6 +1109,7 @@ Size of string: 32 bytes*/
 ```
 
 ### Pass by Value / Pass by Reference
+
 ```cpp
 // Pass by Value - uses value (values all have different memory addresses)
 #include <iostream>
@@ -1091,7 +1126,7 @@ int main() {
     string y = "Jammers";
 
     swapValue(x, y);
-    
+
     cout << "X: " << x << "\n";
     cout << "Y: " << y << "\n";
 
@@ -1122,7 +1157,7 @@ int main() {
     string y = "Jammers";
 
     swapReference(x, y);
-    
+
     cout << "X: " << x << "\n";
     cout << "Y: " << y << "\n";
 
@@ -1163,6 +1198,7 @@ John is 21 years old.*/
 ```
 
 ### Pointers - variable that stores a memory address of another variable
+
 ```cpp
 // & - address of operator
 // * - dereference operator
@@ -1193,6 +1229,7 @@ Second element: 2*/
 ```
 
 ### Null Pointers
+
 ```cpp
 // nullptr = keyword representing a null pointer
 // when using pointers, check if the pointer is null before dereferencing it
@@ -1220,7 +1257,9 @@ int main() {
 /*Output:
 The value of x is: 123*/
 ```
+
 ### Dynamic Memory - Makes programs more flexible, useful when memory needed is unknown
+
 ```cpp
 // if new is used, delete should be used to free memory
 // new operator - allocate memory
@@ -1267,6 +1306,7 @@ Grade #5: E*/
 ```
 
 ### Recursion - function invokes itself
+
 ```cpp
 // Iterative vs Recursive
 // Advantage of recursive: Less code, cleaner, useful for sorting and searching algorithms
@@ -1360,7 +1400,9 @@ Step 1
 Iterative Factorial: 120
 Recursive Factorial: 120*/
 ```
+
 ### Function Templates - Used to generate as many overloaded functions as needed with different data types
+
 ```cpp
 // auto keyword can be used to automatically determine the data type of the variable
 #include <iostream>
@@ -1375,14 +1417,14 @@ T max(T x, T y) {
 }
 // This works with different combinations of data types
 template <typename T, typename U>
-auto max(T x, U y) { 
+auto max(T x, U y) {
     /*auto is the return type,T can be used to return the T data type,
-    U can be used to return the U data type, 
+    U can be used to return the U data type,
     auto can be used to return the data type automatically*/
     return (x > y) ? x : y;
 }
 
-// Function overloading for different data types 
+// Function overloading for different data types
 int max(int x, int y) {
     return (x > y) ? x : y;
 }
@@ -1394,7 +1436,7 @@ double max(double x, double y) {
 }
 
 int main() {
-    // Function overloading for different data types 
+    // Function overloading for different data types
     cout << "Normal Function Overloading\n";
     cout << max(5, 10) << '\n';
     cout << max(5.5, 10.5) << '\n';
@@ -1419,6 +1461,7 @@ Function Templates
 ```
 
 ### Structs - Structure that groups variables under one name, think of it as a class
+
 ```cpp
 // Variables in structs are known as "members"
 #include <iostream>
@@ -1452,14 +1495,322 @@ Name: John
 Age: 21
 GPA: 3.5
 Enrolled: 1*/
+
+// Passing by structs as arguments uses pass by value by default
+// Using pass by reference to avoid copying the struct
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::string;
+
+struct Car {
+    string model;
+    int year;
+};
+
+void printCar(Car &car);
+
+int main() {
+    Car c1;
+    c1.model = "Corvette";
+    c1.year = 2021;
+
+    cout << &c1 << '\n';
+
+    printCar(c1);
+    return 0;
+}
+
+void printCar(Car &car) {
+    cout << &car << '\n';
+    cout << car.model << '\n';
+    cout << car.year << '\n';
+}
+/*Output:
+0x2baffffe20
+0x2baffffe20
+Corvette
+2021*/
 ```
 
+### Enumerations
 
+```cpp
+// Enums - user defined data type consisting of paired integer constants
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::string;
 
-___
+enum Day {sunday = 0, monday = 1, tuesday = 2, wednesday = 3, thursday = 4, friday = 5, saturday = 6};
+
+int main() {
+
+    // Enumeration data type
+    Day today = sunday;
+
+    switch (today) {
+        case sunday:
+            cout << "Today is sunday";
+            break;
+        case monday:
+            cout << "Today is monday";
+            break;
+        case tuesday:
+            cout << "Today is tuesday";
+            break;
+        case wednesday:
+            cout << "Today is wednesday";
+            break;
+        case thursday:
+            cout << "Today is thursday";
+            break;
+        case friday:
+            cout << "Today is friday";
+            break;
+        case saturday:
+            cout << "Today is saturday";
+            break;
+        default:
+            cout << "Invalid day";
+            break;
+    }
+
+    // Switch statement cannot be used with string data type
+    // string today = "sunday";
+    // switch(today){
+    //     case "sunday":
+    //         cout << "Today is sunday";
+    //         break;
+    //     case "monday":
+    //         cout << "Today is monday";
+    //         break;
+    //     case "tuesday":
+    //         cout << "Today is tuesday";
+    //         break;
+    //     case "wednesday":
+    //         cout << "Today is wednesday";
+    //         break;
+    //     case "thursday":
+    //         cout << "Today is thursday";
+    //         break;
+    //     case "friday":
+    //         cout << "Today is friday";
+    //         break;
+    //     case "saturday":
+    //         cout << "Today is saturday";
+    //         break;
+    //     default:
+    //         cout << "Invalid day";
+    //         break;
+    // }
+
+    return 0;
+}
+/*Output:
+Today is sunday*/
+```
+
+### Object Oriented Programming
+
+```cpp
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::string;
+
+class Human {
+    public:
+        string name;
+        int age;
+        void introduce() {
+            cout << "Hello, my name is " << name << " and I am " << age << " years old." << "\n";
+        }
+        void drink() {
+            cout << "I am drinking water." << "\n";
+        }
+        void eat() {
+            cout << "I am eating food." << "\n";
+        }
+};
+
+int main() {
+
+    Human human1;
+
+    cout << "Enter your name: ";
+    cin >> human1.name;
+    cout << "Enter your age: ";
+    cin >> human1.age;
+
+    human1.introduce();
+    human1.drink();
+    human1.eat();
+
+    return 0;
+}
+/*Output:
+Enter your name: John
+Enter your age: 12
+Hello, my name is John and I am 12 years old.
+I am drinking water.
+I am eating food.*/
+
+// With Constructors
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::string;
+
+class Pizza{
+    public:
+        string topping1;
+        string topping2;
+
+    // Constructors
+    Pizza(){
+    }
+
+   // Overloaded Constructors
+    Pizza(string topping1){
+        this->topping1 = topping1;
+    }
+
+    Pizza(string topping1, string topping2){
+        this->topping1 = topping1;
+        this->topping2 = topping2;
+    }
+};
+
+int main() {
+    Pizza pizza1("cheese");
+    Pizza pizza2("cheese", "pepperoni");
+    Pizza pizza3;
+
+    cout << pizza1.topping1 << "\n";
+    cout << pizza2.topping1 << " and " << pizza2.topping2 << "\n";
+
+    return 0;
+}
+/*Output:
+cheese
+cheese and pepperoni*/
+```
+
+### Getters & Setters
+
+```cpp
+// Getter - makes private attribute readable
+// Setter - makes private attribute writable
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::string;
+
+class Stove{
+    private:
+        int temperature = 0;
+
+    public:
+        // Setter - makes private attribute writable
+        void setTemperature(int temp){
+            if(temp > 500){
+                cout << "Temperature is too high!\n";
+            }
+            else if (temp < 5){
+                cout << "Invalid Temperature!\n";
+            }
+            else {
+                temperature = temp;
+            }
+        }
+
+        // Getter - makes private attribute readable
+        int getTemperature(){
+            return temperature;
+        }
+};
+
+int main() {
+    Stove stove;
+    stove.setTemperature(-3);
+
+    cout << "Stove temperature: " << stove.getTemperature();
+
+    return 0;
+}
+```
+
+### Inheritance
+
+```cpp
+#include <iostream>
+using std::cout;
+using std::cin;
+using std::string;
+
+// Parent class
+class Animal {
+    public:
+        bool alive = true;
+
+        void speak() {
+            cout << "Grrrr\n";
+        }
+
+        void eat() {
+            cout << "Nom nom nom\n";
+        }
+
+};
+
+// Child class
+class Dog: public Animal {
+    public:
+        string breed;
+
+        void bark() {
+            cout << "Woof Woof\n";
+        }
+};
+
+int main() {
+    Dog dog;
+    Animal animal;
+
+    cout << "Animal class\n";
+    cout << animal.alive << "\n";
+    animal.speak();
+    animal.eat();
+
+    // Dog class inherits from Animal class
+    cout << "\nDog class\n";
+    cout << dog.alive << "\n";
+    dog.bark();
+    dog.speak();
+    dog.eat();
+
+    return 0;
+}
+/*Output:
+Animal class
+1
+Grrrr
+Nom nom nom
+
+Dog class
+1
+Woof Woof
+Grrrr
+Nom nom nom*/
+```
+
+---
 
 ## Algorithms
+
 ### Bubble Sort - Sorts by comparing adjacent elements e.g. if a is greater than b, swap them
+
 ```cpp
 #include <iostream>
 
@@ -1496,13 +1847,15 @@ void bubbleSort(int array[], int size) {
 ```
 
 ### Luhn Algorithm - Used to validate credit card number
->#### <u>How it works</u>
->1. Double every second digit from right to left.
->2. If doubled number is 2 digits, split them.
->3. Add all single digits from step 2.
->4. Add all odd number digits from right to left.
->5. Sum results from steps 3 & 4.
->6. If step 5 is divisible by 10, credit card number is valid.
+
+> #### <u>How it works</u>
+>
+> 1.  Double every second digit from right to left.
+> 2.  If doubled number is 2 digits, split them.
+> 3.  Add all single digits from step 2.
+> 4.  Add all odd number digits from right to left.
+> 5.  Sum results from steps 3 & 4.
+> 6.  If step 5 is divisible by 10, credit card number is valid.
 
 ```cpp
 //Luhn Algorithm
@@ -1552,7 +1905,7 @@ int getDigit(const int number) {
 int sumOddDigits(const string cardNum) {
     int sum = 0;
     for (int i = cardNum.size() - 1; i >= 0; i -= 2) { // Since using index, -1 to start from the last value, -2 to start from second last value
-        sum+= (cardNum[i] - 48); 
+        sum+= (cardNum[i] - 48);
         // Subtract 48 or '0' to convert from ASCII
         // 0 has a decimal value of 48
         // 1 has a decimal value of 49

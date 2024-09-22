@@ -97,6 +97,30 @@ void printVector(int n) {
     // Notes: Looking up by index is O(1) and looking up by value is O(n)
 }
 
+// Classes
+class Cookie{
+    private:
+        // Attributes
+        string color;
+
+    public:
+        // Constructor
+        Cookie(string color) {
+            this->color = color;
+        }
+
+        // Methods
+        void setColor(string color) {
+            this->color = color;
+        }
+        string getColor() {
+            return color;
+        }
+};
 
 int main() {
+    Cookie *cookie1 = new Cookie("Blue");
+    cout << "Before changing color: " << cookie1->getColor() << endl;
+    cookie1->setColor("Red");
+    cout << "After changing color: " << cookie1->getColor() << endl;
 }

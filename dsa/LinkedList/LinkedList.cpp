@@ -88,7 +88,22 @@ class LinkedList{
 
         // Pop
         void pop() {
-            
+            if (length == 0) return;
+            Node *temp = head;
+            Node *pre = head;
+            while (temp->next) {
+                pre = temp;
+                temp = temp->next;
+            }
+
+            tail = pre;
+            tail->next = nullptr;
+            length--;
+            if (length == 0) {
+                head = nullptr;
+                tail = nullptr;
+            }
+            delete temp;
         }
 };
 
@@ -108,6 +123,11 @@ int main() {
     myLinkedList->getHead();
     myLinkedList->getTail();
     myLinkedList->getLength();
+
+    // Pop
+    myLinkedList->pop();
+    myLinkedList->printList();
+    cout<< endl;
 
     delete myLinkedList;
 }
